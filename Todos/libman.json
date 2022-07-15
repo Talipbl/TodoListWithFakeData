@@ -1,0 +1,10 @@
+{
+  "version": "1.0",
+  "defaultProvider": "unpkg",
+  "libraries": [
+    {
+      "library": "js@0.1.0",
+      "destination": "wwwroot/js/"
+    }
+  ]
+}

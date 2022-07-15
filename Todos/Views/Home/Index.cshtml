@@ -1,0 +1,46 @@
+﻿@model List<ToDoListWithJoin>
+@{
+	ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+	<h1 class="display-4">Welcome</h1>
+</div>
+<table class="table table-hover">
+	<thead>
+		<tr>
+			<th>TaskId</th>
+			<th>Title</th>
+			<th>UserName</th>
+			<th>EMail</th>
+			<th>Status</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var todo in Model)
+		{
+			<tr>
+				<td>@todo.ID</td>
+				<td>@todo.Title</td>
+				<td>@todo.UserName</td>
+				<td>@todo.EMail</td>
+				<td id=@todo.ID>@(todo.Completed == false ? "Not Finished" : "Finished" )</td>
+			</tr>
+		}
+	</tbody>
+</table>
+
+<script>
+	for (let i = 1; i < @Model.Count; i++) {
+		if (document.getElementById(i).innerHTML == "Finished") {
+			document.getElementById(i).style.backgroundColor = "green"
+		}
+		else {
+			document.getElementById(i).style.backgroundColor = "red"
+		}
+	}
+</script>
+
+<div class="text-center">
+	<p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
