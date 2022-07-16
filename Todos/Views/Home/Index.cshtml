@@ -31,7 +31,7 @@
 </table>
 
 <script>
-	for (let i = 1; i < @Model.Count; i++) {
+	for (let i = 1; i <= @Model.Count; i++) {
 		if (document.getElementById(i).innerHTML == "Finished") {
 			document.getElementById(i).style.backgroundColor = "green"
 		}
